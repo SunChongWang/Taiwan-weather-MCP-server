@@ -6,7 +6,7 @@ The server retrieves and transforms the raw weather data from the CWA to the age
 Config = {
         "cwa": {
                  "command": "python",
-                 "args": ["your_local_file_directory/server.py","--ui_mode","terminal"],
+                 "args": ["path_to_your/server.py","--ui_mode","terminal"],
                  "transport": "stdio",
                  "env": {
                     "CWA_API_KEY": "your_cwa_api_key"
@@ -192,7 +192,7 @@ myConfig = {
 client = MultiServerMCPClient(myConfig)
 tools = asyncio.run(client.get_tools())
 
-llm = ChatOllama(model='qwen3:14b') # or other LLMs
+llm = ChatOllama(model='gpt-oss:20b') # or other LLMs
 llm_with_tools = llm.bind_tools(tools) # A tool calling agent
 
 # a utility to get the tool selected by the LLM in response to user query
